@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-//runtime: 19ms
-//memory: 53.7MB
+//runtime: 17ms
+//memory: 52.7MB
 
 public class Question881 {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Question881 {
         int[] people = {3,3,4,5};
         int limit = 5;
         int result = s.numRescueBoats(people, limit);
-        System.out.println(result + " /r");
+        System.out.println(result);
     }
 }
 
@@ -20,34 +20,13 @@ class Solution881 {
 
         int lower = 0;
         int upper = people.length-1;
-        while(upper-lower > 0){
+        while(lower<=upper){
             if(people[lower] + people[upper] <= limit){
                 lower++;
             }
             upper--;
             totalBoats++;
         }
-        if(upper-lower==0){
-            totalBoats++;
-        }
-
-//        List<Integer> peopleList = new ArrayList<>();
-//        for(int i : people){
-//            peopleList.add(i);
-//        }
-//
-//        while(peopleList.size() > 1){
-//            if(peopleList.get(0)+peopleList.get(peopleList.size()-1)<=limit){
-//                peopleList.remove(peopleList.size()-1);
-//                peopleList.remove(0);
-//            }
-//            else{
-//                peopleList.remove(peopleList.size()-1);
-//            }
-//            totalBoats++;
-//        }
-//        if(peopleList.size() == 1)
-//            totalBoats++;
 
         return totalBoats;
     }
