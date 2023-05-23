@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 //Hard
 
-class Question273 {
+class Solution273 {
     public static void main(String[] args) {
         Integer num = 1000000000;
         System.out.println(numberToWords(num));
