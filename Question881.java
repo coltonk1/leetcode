@@ -11,6 +11,6 @@ public class Question881 {
 class Solution881 {
     public int numRescueBoats(int[] people, int limit) {
 
-        return 0;
+        return 1;
     }
 }
