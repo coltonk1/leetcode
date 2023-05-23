@@ -1,11 +1,7 @@
 # leetcode
 
-```json:table
-{
-"fields": {
-{"key": "a", "label": "A", "sortable": true}
-},
-"items": {
-{"a": "1"}
-}
-}
+| Question  | Runtime   | Is cool |
+| :-------- | :---- | :------ |
+| 1         | 21    | false   |
+| 2         | 22    | true    |
+| 150       | 23    | true    |
