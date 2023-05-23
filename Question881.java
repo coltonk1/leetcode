@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//runtime: 325ms
+//memory: 55.1MB
 public class Question881 {
     public static void main(String[] args) {
         Solution881 s = new Solution881();
