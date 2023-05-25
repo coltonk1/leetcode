@@ -1,7 +1,7 @@
 <h1>9. Palindrome Number</h1><h2>Easy</h2>
 
 
-<p>Given an integer <code>x</code>, return <code>true</code><em> if </em><code>x</code><em> is a </em><span data-keyword="palindrome-integer" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div id="headlessui-popover-button-:rj:" aria-expanded="false" data-headlessui-state=""><em><strong>palindrome</strong></em></div></div></div></span><em>, and </em><code>false</code><em> otherwise</em>.</p>
+<p>Given an integer <code>x</code>, return <code>true</code><em> if </em><code>x</code><em> is a </em><span data-keyword="palindrome-integer" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div id="headlessui-popover-button-:r3j:" aria-expanded="false" data-headlessui-state=""><em><strong>palindrome</strong></em></div></div></div></span><em>, and </em><code>false</code><em> otherwise</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
