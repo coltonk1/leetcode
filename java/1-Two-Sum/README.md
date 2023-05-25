@@ -1,4 +1,4 @@
-<h1>1. Two Sum</h1>
+<h1>1. Two Sum</h1><h2>Easy</h2>
 
 
 <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
