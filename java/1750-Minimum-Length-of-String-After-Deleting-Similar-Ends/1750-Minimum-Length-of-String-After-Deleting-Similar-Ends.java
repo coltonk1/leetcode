@@ -11,24 +11,23 @@ class Solution {
         else {
             return s.length();
         }
+
         while(lower < upper){
-            boolean valid = true;
             if(s.charAt(lower) == current){
                 lower++;
-                valid = false;
+                continue;
             }
             if(s.charAt(upper) == current){
                 upper--;
-                valid = false;
-            }
-            if(!valid)
                 continue;
+            }
 
             if(s.charAt(lower) == s.charAt(upper))
                 current = s.charAt(lower);
             else
                 return upper-lower+1;
         }
+
         if(upper == lower && s.charAt(upper) != current)
             return 1;
         return 0;
