@@ -27,6 +27,7 @@ class Solution {
             else
                 return upper-lower+1;
         }
+        
         if(upper == lower && s.charAt(upper) != current)
             return 1;
         return 0;
