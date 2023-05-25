@@ -5,22 +5,16 @@ class Solution {
                 return false;
             
             if(s.charAt(1) == '.'){
-                if(s.length() > 2){
-                    if(s.charAt(2) < '0' || s.charAt(2) > '9'){
-                        return false;
-                    }
-                }
-                else{
+                if(s.length() <= 2)
                     return false;
-                }
+                if(s.charAt(2) < '0' || s.charAt(2) > '9')
+                    return false;
             }
         }
         if(s.length() == 1){
-            if(s.charAt(0) < '0' || s.charAt(0) > '9')
-                return false;
-            else
-                return true;
+            return !(s.charAt(0) < '0' || s.charAt(0) > '9');
         }
+
         if(s.charAt(0) == '.' && (s.charAt(1) == 'e' || s.charAt(1) == 'E'))
             return false;
         int dotcount = 0;
@@ -40,24 +34,18 @@ class Solution {
             else if(i > 0 && (c == 'e' || c == 'E') && ecount == 0){
                 ecount++;
                 dotcount++;
-                if(i != s.length()-1 && ((s.charAt(i-1) >= '0' && s.charAt(i-1) <= '9') || s.charAt(i-1) == '.')){
-                    if((s.charAt(i+1) >= '0' && s.charAt(i+1) <= '9'))
-                        continue;
-                    else if((s.charAt(i+1) == '-' || s.charAt(i+1) == '+')){
-                        if(i != s.length()-2){
-                            if((s.charAt(i+2) >= '0' && s.charAt(i+2) <= '9'))
-                                continue;
-                            else
-                                return false;
-                        }
-                        else
-                            return false;
-                    }
-                    else
-                        return false;
-                }
-                else
+            if(i == s.length()-1 || ((s.charAt(i-1) < '0' || s.charAt(i-1) > '9') && s.charAt(i-1) != '.'))
+                return false;
+            if(!(s.charAt(i+1) >= '0' && s.charAt(i+1) <= '9') && !(s.charAt(i+1) == '-' || s.charAt(i+1) == '+'))
+                return false;
+
+            if((s.charAt(i+1) == '-' || s.charAt(i+1) == '+')){
+                if(i == s.length()-2)
                     return false;
+                if(s.charAt(i+2) < '0' || s.charAt(i+2) > '9')
+                    return false;
+            }
+
             }
             else if(c == '.' && dotcount == 0){
                 dotcount++;
