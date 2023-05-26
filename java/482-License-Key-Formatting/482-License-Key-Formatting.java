@@ -6,10 +6,14 @@ class Solution {
 
         if(s.length() == 0)
             return "";
+
+        int counter = 0;
         String result = s.charAt(s.length()-1)+"";
         for(int i = s.length()-2; i >= 0; i--){
-            if(((s.length()-i-1)%k) == 0){
+            counter++;
+            if(counter == k){
                 result = s.charAt(i) + "-" + result;
+                counter=0;
             }
             else
                 result = s.charAt(i) + result;
