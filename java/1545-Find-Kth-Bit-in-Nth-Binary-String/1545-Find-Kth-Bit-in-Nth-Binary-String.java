@@ -8,11 +8,15 @@ class Solution {
     }
 
     public StringBuilder invert(StringBuilder sn){
-        String tmp = sn.toString();
-        tmp = tmp.replaceAll("0", "2");
-        tmp = tmp.replaceAll("1", "0");
-        tmp = tmp.replaceAll("2", "1");
-        StringBuilder sb = new StringBuilder(tmp);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < sn.length(); i++){
+            char c = sn.charAt(i);
+            if(c == '1')
+                c = '0';
+            else
+                c = '1';
+            sb.append(c);
+        }
         return sb.reverse();
     }
 }
