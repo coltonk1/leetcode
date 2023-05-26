@@ -11,10 +11,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < sn.length(); i++){
             char c = sn.charAt(i);
-            if(c == '1')
-                c = '0';
-            else
-                c = '1';
+            c = c == '1' ? '0' : '1';
             sb.append(c);
         }
         return sb.reverse();
