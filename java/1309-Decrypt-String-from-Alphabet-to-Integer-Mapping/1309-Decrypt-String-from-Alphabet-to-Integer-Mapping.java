@@ -7,7 +7,7 @@ class Solution {
                 c = (char)(s.charAt(i)+'a'-49);
             }
             else{
-                c = (char)(Integer.parseInt(s.substring(i-2, i))+'a'-1);
+                c = (char)(Integer.parseInt(s.substring(i-2, i))+96);
                 i-=2;
             }
             result.insert(0, c);
