@@ -7,11 +7,10 @@ class Solution {
             result+=s.charAt(i);
         }
 
-        boolean pick = true;
+        boolean pick;
         for(int x = 1; x <= numRows-2; x++){
             pick = true;
             for(int i = x; i < s.length();){
-                System.out.println(x + " : " + i);
                 result += s.charAt(i);
                 if(pick)
                     i += (numRows-2)*2-(x-1)*2;
@@ -20,6 +19,7 @@ class Solution {
                 pick = !pick;
             }
         }
+
         //End
         for(int i = numRows-1; i < s.length(); i+=numRows+(numRows-2)){
             result+=s.charAt(i);
