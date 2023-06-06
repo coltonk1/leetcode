@@ -16,28 +16,18 @@
 class Solution {
     public int maxDepth(TreeNode root) {
         if(root == null) return 0;
-        TreeDepth a = next(new TreeDepth(root.left, 1));
-        TreeDepth b = next(new TreeDepth(root.right, 1));
+        int a = next(root.left, 1);
+        int b = next(root.right, 1);
         int result = 1;
-        if(a.depth > b.depth) result = a.depth;
-        else return result = b.depth;
+        if(a > b) result = a;
+        else return result = b;
         return result;
     }
-    public TreeDepth next(TreeDepth d){
-        if(d.node == null) return d;
-        TreeDepth a = next(new TreeDepth(d.node.left, d.depth+1));
-        TreeDepth b = next(new TreeDepth(d.node.right, d.depth+1));
-        if(a.depth > b.depth) return a;
+    public int next(TreeNode current, int depth){
+        if(current == null) return depth;
+        int a = next(current.left, depth+1);
+        int b = next(current.right, depth+1);
+        if(a > b) return a;
         else return b;
-    }
-}
-
-class TreeDepth {
-    TreeNode node;
-    int depth;
-
-    TreeDepth(TreeNode node, int depth){
-        this.node = node;
-        this.depth = depth;
     }
 }
