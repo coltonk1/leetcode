@@ -1,13 +1,15 @@
 class Solution {
     public List<Integer> numOfBurgers(int tomatoSlices, int cheeseSlices) {
 
-        double y = (cheeseSlices*4-tomatoSlices)/2d;
-        double x = cheeseSlices-y;
+        int y = (cheeseSlices*4-tomatoSlices);
+        if(y % 2 != 0) return new ArrayList<>();
+        y /= 2;
+        int x = cheeseSlices-y;
 
-        if(y % 1 != 0 || x*y < 0) return new ArrayList<>();
+        if(x < 0 || y < 0) return new ArrayList<>();
         List<Integer> solution = new ArrayList<>();
-        solution.add((int)x);
-        solution.add((int)y);
+        solution.add(x);
+        solution.add(y);
         return solution;
     
     }
