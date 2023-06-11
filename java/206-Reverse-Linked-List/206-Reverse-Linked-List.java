@@ -18,14 +18,11 @@ class Solution {
             current = current.next;
             if(current == null) break;
         }
-        ListNode n = new ListNode(l.get(l.size()-1));
-        ListNode result = n;
-        for(int i = l.size()-2; i >= 0; i--){
-            int a = l.get(i);
-            ListNode tmp = new ListNode(a);
-            n.next = tmp;
-            n = tmp;
+        current = head;
+        for(int i = l.size()-1; i >= 0; i--){
+            current.val = l.get(i);
+            current = current.next;
         }
-        return result;
+        return head;
     }
 }
