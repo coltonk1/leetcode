@@ -14,7 +14,6 @@ class Solution {
         
         for(int i = 0; i < garbage.length; i++){
             total+=garbage[i].length();
-            if(i == garbage.length-1) break;
             if(i < maxG)
             total+=travel[i];
             if(i < maxP)
