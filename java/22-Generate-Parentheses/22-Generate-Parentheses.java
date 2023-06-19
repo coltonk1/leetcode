@@ -7,7 +7,7 @@ class Solution {
     }
 
     public void dfs(String current, int open, int closed, int target){
-        if(open+closed==target*2){
+        if(closed==target){
             result.add(current);
             return;
         }
