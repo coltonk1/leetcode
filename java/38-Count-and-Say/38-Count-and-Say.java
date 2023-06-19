@@ -9,17 +9,18 @@ class Solution {
     }
 
     public String say(String s){
-        String result = "";
+        StringBuilder res = new StringBuilder("");
         int amt = 1;
         for(int i = 1; i < s.length(); i++){
             if(s.charAt(i-1) == s.charAt(i)) amt++;
             else{
-                result += amt + "" + s.charAt(i-1);
+                res.append(Integer.toString(amt));
+                res.append(s.charAt(i-1));
                 amt = 1;
             }
         }
-        result += amt + "" + s.charAt(s.length()-1);
-        System.out.println(result);
-        return result;
+        res.append(Integer.toString(amt));
+        res.append(s.charAt(s.length()-1));
+        return res.toString();
     }
 }
