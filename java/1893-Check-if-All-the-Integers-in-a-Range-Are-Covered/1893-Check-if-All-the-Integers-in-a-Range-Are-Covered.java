@@ -1,13 +1,19 @@
 class Solution {
     public boolean isCovered(int[][] ranges, int left, int right) {
-        PriorityQueue<Integer> nums = new PriorityQueue<Integer>();
+        int max = -1;
         for(int i = 0; i < ranges.length; i++){
-            for(int x = ranges[i][0]; x <= ranges[i][1]; x++){
-                nums.offer(x);
-            }
+            if(ranges[i][0] <= left && ranges[i][1] >= left) max = ranges[i][1];
         }
-        for(int x = left; x <= right; x++){
-            if(!nums.contains(x)) return false;
+        while(max < right){
+            boolean valid = false;
+            for(int[] i : ranges){
+                if(i[0] <= max+1 && i[1] >= max+1){
+                    max = i[1];
+                    valid = true;
+                    break;
+                }
+            }
+            if(!valid) return false;
         }
         return true;
     }
